@@ -7,13 +7,16 @@ import { BaseLayout } from '@components/layouts'
 import { BlogList } from '@components/blogs'
 import { PortifolioList } from '@components/portifolios'
 import { saveSearchData } from '@lib/md'
+import { getPortfolios } from '@lib/portfolios'
+import { Portfolio } from '@interfaces/Portfolio'
 
 
 type Props = {
-  blogs: Blog[]
+  blogs: Blog[],
+  portfolios: Portfolio[]
 }
 
-function Home({ blogs }: Props) {
+function Home({ blogs, portfolios }: Props) {
   return (
     <BaseLayout>
       <h2
@@ -32,18 +35,24 @@ function Home({ blogs }: Props) {
           (See All)
         </Link>
       </h2>
-      <PortifolioList />
+      <PortifolioList portfolios={portfolios} />
     </BaseLayout>
   )
 }
 
 export const getStaticProps: GetStaticProps = () => {
   const blogs = getBlogs()
+  const portfolios = getPortfolios()
 
-  saveSearchData(blogs)
+  const content = {
+    blogs,
+    portfolios
+  }
+
+  saveSearchData(content)
 
   return {
-    props: { blogs }
+    props: { blogs, portfolios }
   }
 }
 
