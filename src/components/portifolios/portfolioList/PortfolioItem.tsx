@@ -1,6 +1,7 @@
-import { Portfolio } from "@interfaces/Portfolio"
-import Image from "next/image"
-import Link from "next/link"
+import { Portfolio } from '@interfaces/Portfolio'
+import { shortify } from '@lib/client/utils'
+import Image from 'next/image'
+import Link from 'next/link'
 
 type Props = {
     portfolio: Portfolio
@@ -21,11 +22,11 @@ function PortfolioItem({ portfolio }: Props) {
                 <Link href={`/portfolios/${portfolio.slug}`}>
 
                     <span className="absolute inset-0" />
-                    {portfolio.title}
+                    {shortify(portfolio.title)}
 
                 </Link>
             </h3>
-            <p className="text-base font-semibold text-gray-900">{portfolio.description}</p>
+            <p className="text-base font-semibold text-gray-900">{shortify(portfolio.description)}</p>
         </div>
     )
 }

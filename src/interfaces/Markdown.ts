@@ -12,7 +12,7 @@ export interface MarkdownItem {
 
 export interface MarkdownContent {
     blogs: Blog[]
-    portfolio: Portfolio[]
+    portfolios: Portfolio[]
 }
 
 export type ContentItemName = keyof MarkdownContent

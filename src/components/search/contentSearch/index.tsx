@@ -2,12 +2,14 @@ import { MagnifyingGlassIcon } from '@heroicons/react/24/solid'
 import { SearchContent } from '@interfaces/Markdown'
 
 import ContentIndexer from '@lib/client/ContentIndexer'
+import { useRouter } from 'next/router'
 import { ChangeEvent, useEffect, useRef, useState } from 'react'
 
 const ContentSearch = () => {
     const ref = useRef<HTMLInputElement>(null)
     const [results, setResults] = useState<SearchContent[]>([])
     const [query, setQuery] = useState('')
+    const router = useRouter()
 
 
     const handleClickOutside = () => {
@@ -76,7 +78,7 @@ const ContentSearch = () => {
                     {results.map((result) =>
                         <li
                             key={result.slug}
-                            onClick={() => { }}
+                            onClick={() => router.push(`/${result.category}/${result.slug}`)}
                             className={`hover:bg-indigo-600 hover:text-white p-3 relative cursor-pointer`}>
                             <div className="font-bold text-sm truncate">{result.title}</div>
                             <p className="truncate text-sm">{result.description}</p>

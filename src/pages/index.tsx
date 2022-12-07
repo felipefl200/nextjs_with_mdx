@@ -45,8 +45,8 @@ export const getStaticProps: GetStaticProps = () => {
   const portfolios = getPortfolios()
 
   const content = {
-    blogs,
-    portfolios
+    blogs: blogs.slice(0, 4),
+    portfolios: portfolios.slice(0, 4)
   }
 
   saveSearchData(content)
