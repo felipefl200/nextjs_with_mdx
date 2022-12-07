@@ -4,11 +4,13 @@ specifiers:
   '@headlessui/react': ^1.7.4
   '@heroicons/react': ^2.0.13
   '@tailwindcss/typography': ^0.5.8
+  '@types/js-search': ^1.4.0
   '@types/node': 18.11.9
   '@types/react': 18.0.25
   '@types/react-dom': 18.0.9
   autoprefixer: ^10.4.13
   gray-matter: ^4.0.3
+  js-search: ^2.0.0
   next: 13.0.5
   postcss: ^8.4.19
   react: 18.2.0
@@ -26,6 +28,7 @@ dependencies:
   '@types/react': 18.0.25
   '@types/react-dom': 18.0.9
   gray-matter: 4.0.3
+  js-search: 2.0.0
   next: 13.0.5_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -36,6 +39,7 @@ dependencies:
 
 devDependencies:
   '@tailwindcss/typography': 0.5.8_tailwindcss@3.2.4
+  '@types/js-search': 1.4.0
   autoprefixer: 10.4.13_postcss@8.4.19
   postcss: 8.4.19
   tailwindcss: 3.2.4_postcss@8.4.19
@@ -233,6 +237,10 @@ packages:
     dependencies:
       '@types/unist': 2.0.6
     dev: false
+
+  /@types/js-search/1.4.0:
+    resolution: {integrity: sha512-OMDWvQP2AmxpQI9vFh7U/TzExNGB9Sj9WQCoxUR8VXZEv6jM4cyNzLODkh1gkBHJ9Er7kdasChzEpba4FxLGaA==}
+    dev: true
 
   /@types/mdast/3.0.10:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==}
@@ -646,6 +654,10 @@ packages:
   /is-plain-obj/4.1.0:
     resolution: {integrity: sha512-+Pgi+vMuUNkJyExiMBt5IlFoMyKnr5zhJ4Uspz58WOhBF5QoIZkFyNHIbBAtHwzVAgk5RtndVNsDRN61/mmDqg==}
     engines: {node: '>=12'}
+    dev: false
+
+  /js-search/2.0.0:
+    resolution: {integrity: sha512-lJ8KzjlwcelIWuAdKyzsXv45W6OIwRpayzc7XmU8mzgWadg5UVOKVmnq/tXudddEB9Ceic3tVaGu6QOK/eebhg==}
     dev: false
 
   /js-tokens/4.0.0:

@@ -4,6 +4,7 @@ import { Fragment } from "react"
 import { Popover, Transition } from "@headlessui/react"
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
 import { navigation } from './navigation'
+import ContentSearch from "@components/search/contentSearch"
 
 function NavBar() {
   return (
@@ -55,6 +56,7 @@ function NavBar() {
             </div>
             <div className="hidden md:block">
               {/* Search Input Component */}
+              <ContentSearch />
             </div>
           </nav>
         </div>
@@ -92,17 +94,16 @@ function NavBar() {
               </div>
               <div className="space-y-1 px-2 pt-2 pb-3">
                 {navigation.map((item) => (
-                  <Link key={item.name} href={item.href}>
-                    <a
-                      className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
-                    >
-                      {item.name}
-                    </a>
+                  <Link key={item.name} href={item.href} className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900">
+
+                    {item.name}
+
                   </Link>
                 ))}
               </div>
               <div className="px-4">
                 {/* Search Input Component */}
+                <ContentSearch />
               </div>
               <a
                 href="#"

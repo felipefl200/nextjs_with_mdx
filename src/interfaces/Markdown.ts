@@ -6,3 +6,7 @@ export interface MarkdownItem {
     date: string
     // coverImage: string
 }
+
+export interface SearchContent extends Partial<MarkdownItem> {
+    category: string
+}
