@@ -1,11 +1,13 @@
-import { GetStaticProps } from 'next'
 import Link from 'next/link'
+import { GetStaticProps } from 'next'
 import { getBlogs } from '@lib/blogs'
+import { Blog } from '@interfaces/Blog'
 
 import { BaseLayout } from '@components/layouts'
 import { BlogList } from '@components/blogs'
 import { PortifolioList } from '@components/portifolios'
-import { Blog } from '@interfaces/Blog'
+import { saveSearchData } from '@lib/md'
+
 
 type Props = {
   blogs: Blog[]
@@ -37,6 +39,8 @@ function Home({ blogs }: Props) {
 
 export const getStaticProps: GetStaticProps = () => {
   const blogs = getBlogs()
+
+  saveSearchData(blogs)
 
   return {
     props: { blogs }

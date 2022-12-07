@@ -16,20 +16,23 @@ const ContentSearch = () => {
     }
 
     const escapeKeyCallback = (event: KeyboardEvent) => {
-        if (event.key === 'Escape' && results.length > 0) {
+        if (event.key === 'Escape'
+            // && results.length > 0
+        ) {
             handleClickOutside()
         }
     }
 
     useEffect(() => {
         const callback = (event: MouseEvent) => {
-            if (results.length > 0 &&
+            if (
+                // results.length > 0 &&
                 ref.current &&
                 !ref.current.contains(event.target as Node)) {
                 handleClickOutside()
             }
         }
-        
+
         document.addEventListener('click', callback)
         document.addEventListener('keydown', escapeKeyCallback)
 
